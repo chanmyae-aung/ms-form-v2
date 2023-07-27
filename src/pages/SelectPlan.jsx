@@ -67,7 +67,15 @@ export default function SelectPlan() {
   };
 
   const handleSwitch = () => {
+    const selectedCard = document.querySelector(".selected");
     setSwitchPlan(!switchPlan);
+    if (selectedCard) {
+      // Remove the "selected" class from the already selected Card
+      selectedCard.classList.remove("selected");
+    }
+
+    // e.target.classList.add("selected");
+
   };
   const ConfirmPlan = async (e) => {
     e.preventDefault();
